@@ -1,0 +1,20 @@
+div.menu button {
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+div.itens-menu {
+  display: flex;
+  flex-direction: column;  
+}
+
+div.itens-menu a{
+  text-decoration: none; 
+  display: none; 
+}
+
+.menu:hover .itens-menu a{
+  display: block;
+}
