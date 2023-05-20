@@ -1,8 +1,46 @@
 .card {
+  display:flex; 
+  flex-direction: column;
+  align-items: stretch;
   background-color: aquamarine;
-  height: 120px;
-  width: 120px;
-  color: black;
-  margin: 2px;
+  height: 200px;
+  width: 200px;
+  color: black;  
   border-radius: 5%;
+  margin: 10px;
+}
+
+.card *{
+  display:flex; 
+  align-items: center;
+}
+
+.card-alta {   
+  height: 10%;
+  
+}
+
+.card-fecha {
+ 
+  height: 60%;
+  font-size: xx-large;
+  
+}
+
+.card-baixa {  
+  height: 10%;
+}
+
+.card-empresa {  
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20%;
+  padding-right: 5px;
+  padding-left: 5px;  
+}
+
+.card-empresa img{
+  width: auto;
+  height: 100%;
+  border-radius: 7%;
 }
