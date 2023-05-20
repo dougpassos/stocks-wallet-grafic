@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   background-color: bisque;
-  height: 450px;
+  height: auto;
+  padding: 1% .5%;
 }
 
 .App-header {

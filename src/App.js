@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import './App.css';
 import CardStock from './components/CardStock';
+import GraficoData from './components/GraficoData';
 import NavBar from './components/NavBar';
 
 function App() {  
@@ -22,6 +23,7 @@ function App() {
         <NavBar></NavBar>      
       </header>
       <CardStock data={stockData}></CardStock>
+      <GraficoData></GraficoData>
     </div>
   );
 }
