@@ -1,13 +1,20 @@
-import axios from 'axios';
+import { configAxios } from "./config-axios";
 
-const configAxios = axios.create({
-  baseURL: "https://brapi.dev/api",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
-
+const getDataTicket = async(ticket,
+                            range='5d',
+                            interval='5d'
+                            ) => {
+  try {
+    const response = await configAxios.get(
+      `/quote/${ticket.toString()}?range=${range}&interval=${interval}`)
+      .then(response => response.data);
+      console.log(response)
+    return response;    
+  } catch (error) {
+    console.log(error);
+  }
+}
+/*
 const getTicketList = async(stockQuery) => {
   try {
     const response = await configAxios.get(`/quote/list?sortBy=close&sortOrder=desc&limit=5&search=${stockQuery}`);
@@ -17,25 +24,6 @@ const getTicketList = async(stockQuery) => {
     console.log(error);
   }
 };
+*/
 
-const getDataTicket = async(ticket,
-                            range='5d',
-                            interval='5d',
-                            fund=true,
-                            divid=false
-                            ) => {
-  try {
-    const response = await configAxios.get(
-      `/quote/${ticket}
-        ?range=${range}
-        &interval=${interval}
-        &fundamental=${fund}
-        &dividends=${divid}`
-    ).then(response => response.json());
-    return response;    
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export default getTicketList;
+export default getDataTicket;
