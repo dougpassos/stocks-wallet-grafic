@@ -1,7 +1,7 @@
 import './CardStock.css';
 
-function CardStock(props){
-  const data = props.data;
+function CardStock(props){  
+  console.log(props.data);
 
   return (
     <div className='card'>
@@ -10,13 +10,13 @@ function CardStock(props){
 
       </div>
       <div className='card-fecha'>
-        <p>Close: <span>{data.close}</span></p>
+        <p>Close: <span>00,00</span></p>
       </div>
       <div className='card-baixa'>
         <p>Baixa: <span>00,00</span></p>
       </div>
       <div className='card-empresa'>
-        <p>{data.name}</p><img alt={`logo ${data.name}`}  src={data.logo}></img>
+        <p>empresa</p><img alt='logo'  src='#'></img>
       </div>
     </div>
   );
