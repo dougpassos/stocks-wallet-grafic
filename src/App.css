@@ -1,17 +1,26 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
   text-align: center;
-  background-color: bisque;
+  background-color: #0b3750;
   height: auto;
   padding: 1% .5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+.App-header { 
+  background-color: #156597;
+  min-height: 8vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #282c34;
+  color: #282c34;  
+}
+
+.area-cards,.area-grafic {  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

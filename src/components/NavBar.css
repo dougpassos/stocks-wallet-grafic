@@ -1,8 +1,16 @@
 nav {
-  background-color: aqua;
+  background-color: rgb(38, 56, 95);
   display: flex;
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  flex-direction: row;
+  align-content: stretch;
+  max-height: 50px;
+  width: auto;
+  height: 45px;
+  margin: auto 5px; 
+  padding: 0 5px; 
+}
+
+nav div{
+  background-color: rgb(38, 56, 95);
 }
 
