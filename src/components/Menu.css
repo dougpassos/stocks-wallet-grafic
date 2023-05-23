@@ -1,3 +1,10 @@
+.menu {
+  flex-direction: column;
+  align-content: space-between;
+  margin-bottom: 2px;
+  padding: 2px;
+}
+
 div.menu button {
   width: 5rem;
   height: 1.5rem;
@@ -7,14 +14,25 @@ div.menu button {
 
 div.itens-menu {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
+  position: relative;
 }
 
-div.itens-menu a{
+div.itens-menu ul{
+  padding: 0;
   text-decoration: none; 
   display: none; 
 }
 
-.menu:hover .itens-menu a{
-  display: block;
+div.itens-menu li {   
+  list-style: none;  
+  padding: 0;
+}
+.menu:hover .itens-menu ul{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: auto; 
+  width: auto;
+   
 }
