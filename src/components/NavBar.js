@@ -1,16 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Menu from './Menu';
 import './NavBar.css'
 
 function NavBar() {
-  const acoes = ['PETR4','MAG4', 'ABC9', 'xxxx']
-  const cripto = ['BTC','LTC', 'DOG', 'xxxx']
-  const moedas = ['DOLLAR','PESO', 'ABC9', 'xxxx']
+  const acoes = ['PETR4','B3SA3', 'VBBR3']
+  /*
+  const cripto = ['BTC','LTC', 'DOG']
+  const moedas = ['DOLLAR','PESO', 'ABC9']
+  */
   return (    
       <nav>
-        <Menu title='Sockts' itens={acoes}></Menu> 
-        <Menu title='Cripto' itens={cripto}></Menu> 
-        <Menu title='Moedas' itens={moedas}></Menu>             
+        <Menu title='Stocks' itens={acoes}></Menu>                   
       </nav>
   );  
 }
