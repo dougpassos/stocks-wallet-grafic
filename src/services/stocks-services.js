@@ -1,6 +1,6 @@
 import { configAxios } from "./config-axios";
 
-const getDataTicket = async (
+/* const getDataTicket = async (
   ticket = 'PETR4',
   range = '5d',
   interval = '5d'
@@ -13,6 +13,14 @@ const getDataTicket = async (
   } catch (error) {
     console.error(error);
   }
-}
+} */
+
+ const getDataTicket = async (ticket = 'PETR4', 
+                        range = '5d', 
+                        interval = '5d') =>  { 
+                       await configAxios.get(`/quote/${ticket}?range=${range}&interval=${interval}`)
+                      .then(response => response.data)
+                      .catch(error => console.error(error))  
+                }
 
 export default getDataTicket;
