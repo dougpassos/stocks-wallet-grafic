@@ -3,14 +3,14 @@ import Chart from "react-apexcharts";
 
 
 
-function GraficoData(props) { 
-
+function GraficoData(props) {   
   
-  const date = props.data.historicalDataPrice.map((element) => element.date)
-  const close = props.data.historicalDataPrice.map((element) => element.close)
- 
- 
-  console.log(date);
+  let date = []
+  let close =[]
+  if (props.data !== undefined && props.data.length !== 0 ) {
+    date = props.data.historicalDataPrice.map((element) => element.date);
+    close = props.data.historicalDataPrice.map((element) => element.close);    
+  }
 
   const state = {
     options: {
