@@ -1,9 +1,16 @@
 import './GraficoData.css';
 import Chart from "react-apexcharts";
-//import { useState } from 'react';
 
 
-function GraficoData() {  
+
+function GraficoData(props) { 
+
+  
+  const date = props.data.historicalDataPrice.map((element) => element.date)
+  const close = props.data.historicalDataPrice.map((element) => element.close)
+ 
+ 
+  console.log(date);
 
   const state = {
     options: {
@@ -19,21 +26,13 @@ function GraficoData() {
       },
       
       xaxis: {
-        categories: [1991, 1992, 1993, 1994]
+        categories: date
       }
     },
     series: [
       {
         name: "series-1",
-        data: [55, 15, 45,23]
-      },
-      {
-        name: "series-2",
-        data: [45, 25, 35, 22]
-      },
-      {
-        name: "series-3",
-        data: [35, 55, 35, 52]
+        data: close
       }
     ]
   };
