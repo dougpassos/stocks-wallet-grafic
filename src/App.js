@@ -6,13 +6,12 @@ import GraficoData from './components/GraficoData';
 import NavBar from './components/NavBar';
 
  function App() {  
-  
+    
  const [ menuOption, setMenuOption ] = useState(['PETR4']);
- const [ dataApi, setDataApi ] = useState([]); 
- 
+ const [ dataApi, setDataApi ] = useState([]);
 
   
- const getApiData = async (ticket) => {
+ const getApiData = async (ticket='PETR4') => {
    await fetch(
     `https://brapi.dev/api/quote/${ticket}?range=5d&interval=5d&fundamental=true`
   ).then((response) => response.json()
