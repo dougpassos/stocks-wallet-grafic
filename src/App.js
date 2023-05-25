@@ -4,25 +4,37 @@ import './App.css';
 import CardStock from './components/CardStock';
 import GraficoData from './components/GraficoData';
 import NavBar from './components/NavBar';
-import getDataTicket from './services/stocks-services';
 
  function App() {  
   
- const [menuOption, setMenuOption ] = useState(['PETR4']);
- const [dataApi, setDataApi ] = useState([])
+ const [ menuOption, setMenuOption ] = useState(['PETR4']);
+ const [ dataApi, setDataApi ] = useState([]); 
  
+
+  
+ const getApiData = async (ticket) => {
+   await fetch(
+    `https://brapi.dev/api/quote/${ticket}?range=5d&interval=5d&fundamental=true`
+  ).then((response) => response.json()
+  ).then((response) => {
+    setDataApi(response['results'][0]);
+  }
+  ).catch((error) => console.error(error));  
+};
+
+
  useEffect(() => {
-   if(menuOption !== null) {      
-      const data = getDataTicket(menuOption);         
-      setDataApi(data);
+   if(menuOption !== null) {
+    getApiData(menuOption)    
+    
     }
   },[menuOption])
+
   
-  console.log(dataApi);
-  
+    
   return (
     <div className="App">
-      <ApiDataContext.Provider value={{menuOption, setMenuOption}}>
+      <ApiDataContext.Provider value={{menuOption, setMenuOption }}>
         <header className="App-header">
           <NavBar></NavBar>      
         </header>
@@ -30,7 +42,7 @@ import getDataTicket from './services/stocks-services';
           <CardStock className='card-stock' data={dataApi}></CardStock>       
         </div>
         <div className='area-grafic'>
-          <GraficoData></GraficoData>
+          <GraficoData data={dataApi}></GraficoData>
         </div>
       </ApiDataContext.Provider>
     </div>
